@@ -15,10 +15,8 @@ const map = new mapboxgl.Map({
 });
 
 
-
 map.on('load', async () => {
 
-  // Boston bike lanes
   map.addSource('boston_route', {
     type: 'geojson',
     data: 'https://bostonopendata-boston.opendata.arcgis.com/datasets/boston::existing-bike-network-2022.geojson',
@@ -29,27 +27,9 @@ map.on('load', async () => {
     type: 'line',
     source: 'boston_route',
     paint: {
-      'line-color': '#32D400',
-      'line-width': 5,
-      'line-opacity': 0.6,
-    },
-  });
-
-  // Cambridge bike lanes
- map.addSource('boston_route', {
-  type: 'geojson',
-  data: 'https://services9.arcgis.com/EGheeB0VDT6EarZv/ArcGIS/rest/services/Boston_Common_WFL1/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=geojson',
-});
-
-
-  map.addLayer({
-    id: 'cambridge-bike-lanes',
-    type: 'line',
-    source: 'cambridge_route',
-    paint: {
-      'line-color': '#32D400',
-      'line-width': 5,
-      'line-opacity': 0.6,
+      'line-color': 'green',
+      'line-width': 3,
+      'line-opacity': 0.4,
     },
   });
 
