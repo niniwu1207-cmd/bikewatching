@@ -36,10 +36,11 @@ map.on('load', async () => {
   });
 
   // Cambridge bike lanes
-  map.addSource('cambridge_route', {
-    type: 'geojson',
-    data: 'https://raw.githubusercontent.com/cambridgegis/cambridgegis_data/main/Recreation/Bike_Facilities/RECREATION_BikeFacilities.geojson',
-  });
+ map.addSource('boston_route', {
+  type: 'geojson',
+  data: 'https://services9.arcgis.com/EGheeB0VDT6EarZv/ArcGIS/rest/services/Boston_Common_WFL1/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=geojson',
+});
+
 
   map.addLayer({
     id: 'cambridge-bike-lanes',
